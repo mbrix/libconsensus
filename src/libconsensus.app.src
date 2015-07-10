@@ -1,0 +1,17 @@
+%% Copyright 2015, Matthew Branton
+%% Distributed under the MIT License under LICENSE
+%% https://github.com/libbitcoin/libbitcoin-consensus.git
+
+
+{application, libconsensus,
+ [
+  {description, "Erlang NIF bindings for bitcoin-libconsensus"},
+  {vsn, git},
+  {modules, []},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {env, []}
+ ]}.
