@@ -5,8 +5,7 @@
 
 #include "erl_nif.h"
 
-#include "consensus/consensus.h"
-#include <bitcoin/consensus/export.hpp>
+#include <bitcoin/consensus.hpp>
 #include <stdio.h>
 #include <stdint.h>
 
@@ -70,7 +69,7 @@ verify_script(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[])
 
 static ERL_NIF_TERM result_to_atom(ErlNifEnv* env, verify_result_type result)
 {
-    switch ((ScriptError_t)result)
+    switch (result)
     {
         // Logical result
         case verify_result_eval_true:

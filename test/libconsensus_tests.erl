@@ -58,7 +58,7 @@ negative() ->
    TxBin = hexstr_to_bin("01000000017d01943c40b7f3d8a00a2d62fa1d560bf739a2368c180615b0a7937c0e883e7c000000006b4830450221008f66d188c664a8088893ea4ddd9689024ea5593877753ecc1e9051ed58c15168022037109f0d06e6068b7447966f751de8474641ad2b15ec37f4a9d159b02af68174012103e208f5403383c77d5832a268c9f71480f6e7bfbdfa44904becacfad66163ea31ffffffff01c8af0000000000001976a91458b7a60f11a904feef35a639b6048de8dd4d9f1c88ac00000000"),
    Prevout = hexstr_to_bin("76a914c564c740c6900b93afc9f1bdaef0a9d466adf6ee88ac"),
    ?assertEqual(error_result_tx_input_invalid, libconsensus:verify_script(TxBin, Prevout, 3, libconsensus:flags(verify_flags_p2sh))),
-   ?assertEqual(error_result_tx_invalid, libconsensus:verify_script(crypto:rand_bytes(40), Prevout, 0, 0)).
+   ?assertEqual(error_result_tx_invalid, libconsensus:verify_script(crypto:strong_rand_bytes(40), Prevout, 0, 0)).
 
 
 libconsensus_test_() -> 
