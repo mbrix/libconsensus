@@ -3,3 +3,4 @@ ebin
 priv/*.so
 deps/
 .eunit/
+c_src/libsecp256k1.pc
